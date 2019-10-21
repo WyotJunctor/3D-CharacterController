@@ -11,7 +11,8 @@ namespace WW
         bool grounded;
 
         Vector3 ground_checkoffset;
-        Vector3 ground_direction = Vector3.down;
+        [HideInInspector]
+        public Vector3 ground_direction = Vector3.down;
         float check_angle = 30f;
 
         // Start is called before the first frame update

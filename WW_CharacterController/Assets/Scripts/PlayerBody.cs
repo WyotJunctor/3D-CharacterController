@@ -10,6 +10,8 @@ namespace WW
         public MoveHandler move_handler;
         [HideInInspector]
         public JumpChecker jump_checker;
+        [HideInInspector]
+        public JumpHandler jump_handler;
 
         protected override void Start()
         {
@@ -29,7 +31,7 @@ namespace WW
         {
             if (hold_jump)
             {
-                // jump_handler.Act(jump, hold_jump);
+                jump_handler.Act(jump, hold_jump);
             }
 
             if (move)
