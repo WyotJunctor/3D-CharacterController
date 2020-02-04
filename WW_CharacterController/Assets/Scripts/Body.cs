@@ -10,7 +10,8 @@ namespace WW
     {
         [HideInInspector]
         public float gravity_multiplier = 4.0f;
-        protected Rigidbody rb;
+        [HideInInspector]
+        public Rigidbody rb;
 
         [HideInInspector]
         public Rotator rotator;

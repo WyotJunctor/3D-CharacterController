@@ -28,10 +28,16 @@ namespace WW
                 Vector3 coll_dir = collision.contacts[0].point - (transform.position);
                 if (Vector3.Angle(ground_direction, coll_dir) <= check_angle)
                 {
+                    print("GROUNDED");
                     grounded = true;
                     break;
                 }
             }
+        }
+
+        private void OnCollisionExit(Collision collision)
+        {
+            grounded = false;
         }
     }
 }

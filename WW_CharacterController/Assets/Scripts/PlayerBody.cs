@@ -19,6 +19,7 @@ namespace WW
             rotator.smooth_speed = 0.25f;
             move_handler = GetComponent<MoveHandler>();
             jump_checker = GetComponentInChildren<JumpChecker>();
+            jump_handler = GetComponent<JumpHandler>();
         }
 
         protected override void Update()
@@ -29,12 +30,12 @@ namespace WW
         public void HandleInput(bool move, Vector3 move_dir, bool hold_move, 
             bool jump, bool hold_jump)
         {
-            if (hold_jump)
+            if (hold_jump && jump_handler)
             {
                 jump_handler.Act(jump, hold_jump);
             }
 
-            if (move)
+            if (move && move_handler)
             {
                 move_handler.Act(move_dir, hold_move);
             }
